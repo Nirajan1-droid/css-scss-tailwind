@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns:repeat(12,1fr)  ;
+            /* 3 choti 1 frame repeat garne */
+            grid-template-rows: 40px    auto 40px    ;
+            grid-gap: 3px;
+            grid-template-areas:
+            ". h h h h h h h h h h ."
+            "c c c c c c c c c c c m"
+            ". f f f f f f f f f f m"
+        }
+        
+        .header{
+grid-area:h       
+ }
+        .menu{
+           grid-area: m;
+        }
+        .content{
+grid-area: c;
+        }
+        .footer{
+grid-area: f;        
+}
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">HEADER</div>
+        <div class="menu">MENU</div>
+        <div class="content">CONTENT</div>
+        <div class="footer">FOOTER</div>
+
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+.container div {
+    background-color: rgb(131, 167, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+font-size: larger;
+}
+/* .container div ::content{
+    
+} */
