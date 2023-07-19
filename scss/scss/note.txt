@@ -1,0 +1,39 @@
+1.the use of the mixin:
+
+@mixin name_ofit($variable){
+    display:flex;
+    other css
+
+}
+
+class-name{
+    @include mixinname;
+}
+
+2.@media (min-width: 768px) {
+  /* Styles applied when the viewport width is 768px or wider */
+  after 768 the css will be applied
+}
+
+@media (max-width: 1024px) {
+    before till the px defined then only the css will be applied
+  /* Styles applied when the viewport width is 1024px or narrower */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    before to till, the px exists the css will be applied
+
+  /* Styles applied when the viewport width is between 768px and 1024px (inclusive) */
+}
+
+3.background : linear-gradient(
+    to right,
+    rgba($primary-color,0.9),
+    rgba($primary-color,0.3)
+), url('../img/model.jpeg') 
+ center top;
+
+ 40vh = 40 percent of the available viewport.
+ 
+  

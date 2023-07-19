@@ -1,0 +1,63 @@
+//importing _resets in scss as the compiler ignores the scss starting with underscore 
+//starting with underscore scss are the partial scss and it is used to modularize the scss
+
+@import './resets';
+@import './variables';
+
+
+@function weight($weight-name){
+    @return map-get($font-weights,$weight-name);
+}
+
+@mixin theme($light-theme:true){
+    @if $light-theme {
+        background:lighten($accent-color,40%);//fully lighten the primary color i.e black
+        color:darken($text-color,100%);//fully darken the text color i.e.white 
+    }
+}
+
+
+@mixin flexcenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    
+}
+
+@mixin mobile {
+    @media (max-width: $mobile){
+        @content;
+
+    }
+
+}
+body{
+    background: $primary-color;
+    color:$text-color;
+}
+
+.main{
+    @include flexcenter(row);
+    width:calc(80%-4000px);
+    margin: 0 auto;
+    
+    #{&}__paragraph{
+        // font-weight:map-get($font-weights,bold );
+        font-weight: weight(regular);
+        &:hover{
+            color:$accent-color;
+        }
+        
+    }
+    @include mobile {
+        flex-direction: column;
+        gap:$par-gap;
+
+    }
+}
+
+.light {
+    @include theme($light-theme:true);
+}
+
